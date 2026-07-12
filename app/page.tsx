@@ -1,65 +1,143 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 import Image from "next/image";
+import { BookOpen, GraduationCap, Users, ShieldAlert } from "lucide-react";
 
 export default function Home() {
+  // Ultra-premium layout mapping for exactly 7 images
+  const galleryImages = [
+    { src: "/gallery/img1.jpg", alt: "Mama kevina", className: "md:col-span-2 md:row-span-2", isPriority: true }, // Main feature
+    { src: "/gallery/img2.jpg", alt: "Meeting with some of Donors Supporting Scholarships" },
+    { src: "/gallery/img3.jpg", alt: "Mama kevina Comperhensive Secondary School" },
+    { src: "/gallery/img4.jpg", alt: "School Engagement and Activities" },
+    { src: "/gallery/img7.jpg", alt: "Sister Clare Mary Busingye wih Some of the children under Scholarship" },
+    { src: "/gallery/img6.jpg", alt: "School Gardening Project", className: "md:row-span-2" }, // Elegant tall block
+    { src: "/gallery/img5.jpg", alt: "Vegetable Income Generating Project", className: "md:col-span-2" }, // Wide anchor block
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="w-full">
+      {/* Hero Block */}
+      <section className="bg-gradient-to-b from-blue-50 via-white to-transparent py-20 px-4">
+        <div className="container mx-auto max-w-4xl text-center space-y-6">
+          <span className="text-emerald-600 font-bold tracking-widest text-xs uppercase px-3 py-1 bg-emerald-50 rounded-full border border-emerald-200">
+            Ugandan Indigenous NGO
+          </span>
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            Empowering Society to Break the <span className="text-blue-700">Cycle of Poverty</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed">
+            Mama Kevina Foundation actively works to improve the lives of vulnerable communities particularly girls, young women, and youth by advancing education and vocational skills in Tororo District.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 pt-4">
+            <Button asChild size="lg" className="bg-blue-700 hover:bg-blue-800 text-white shadow-md">
+              <Link href="/work">Our Core Programs</Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild className="border-slate-300 text-slate-700 hover:bg-slate-50">
+              <Link href="/about">Read Our Story</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Summary Banner */}
+      <section className="bg-blue-900 text-white py-12">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <h2 className="text-2xl font-bold mb-4">Our Core Approach</h2>
+          <p className="text-blue-100 leading-relaxed text-base">
+            Our target is to support education needs for children from ultra poor families and those orphaned while supporting families at community level to improve their livelihoods through climate smart agriculture and income generating activities as a sustainable solution in the long term.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Program Summary Overviews */}
+      <section className="container mx-auto px-4 py-20 max-w-6xl">
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+          <h2 className="text-3xl font-bold text-slate-900">What We Do</h2>
+          <p className="text-slate-500">Four essential programs under our specialized Family Strengthening Care Model framework.</p>
         </div>
-      </main>
-    </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card className="flex flex-col justify-between hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <BookOpen className="h-8 w-8 text-blue-700 mb-2" />
+              <CardTitle className="text-lg">Child Sponsorship</CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-600">
+              Providing essential financial assistance including school fees, textbooks, uniforms, and stationery.
+            </CardContent>
+          </Card>
+
+          <Card className="flex flex-col justify-between hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <GraduationCap className="h-8 w-8 text-emerald-600 mb-2" />
+              <CardTitle className="text-lg">Vocational Training</CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-600">
+              Nurturing talents outside traditional schooling with culinary, mechanics, and health support pathways.
+            </CardContent>
+          </Card>
+
+          <Card className="flex flex-col justify-between hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <Users className="h-8 w-8 text-orange-600 mb-2" />
+              <CardTitle className="text-lg">Parent Support</CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-600">
+              Empowering home spaces through parenting workshops, learning strategies, and advocacy.
+            </CardContent>
+          </Card>
+
+          <Card className="flex flex-col justify-between hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <ShieldAlert className="h-8 w-8 text-purple-600 mb-2" />
+              <CardTitle className="text-lg">Family Strengthening</CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-slate-600">
+              Economic empowerment via local VSLA savings, climate-smart farming, and child protection services.
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* PREMIUM SECTION: Asymmetric Masonry Impact Gallery */}
+      <section className="bg-slate-50/60 border-t border-slate-100 py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+            <h2 className="text-3xl font-bold text-slate-900">Our Work In Action</h2>
+            <p className="text-slate-500">Real glimpses into the daily field transformations happening across Tororo District.</p>
+          </div>
+
+          {/* Grid optimized with custom rows to ensure perfect alignment for 7 items */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[220px]">
+            {galleryImages.map((img, idx) => (
+              <div 
+                key={idx} 
+                className={`relative rounded-2xl overflow-hidden border border-slate-200/60 bg-slate-100 shadow-sm group hover:shadow-md transition-all ${img.className || ""}`}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                  // Clean fix for the terminal warning:
+                  priority={img.isPriority || false}
+                  loading={img.isPriority ? undefined : "lazy"}
+                />
+                
+                {/* Modern visual overlay containing descriptions that pull up smoothly */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-5">
+                  <p className="text-white text-xs sm:text-sm font-medium tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    {img.alt}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
